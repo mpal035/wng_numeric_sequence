@@ -14,6 +14,8 @@ This project is a numeric sequencer that takes one input value and displays 5 se
 An error message will be displayed if the value is a non integer or is less than 1.
 
 
+
+
 ## Getting Started
 
 To get you started you can simply clone this repository and install its dependencies
@@ -49,7 +51,7 @@ folders in your project.
 * `app/bower_components` - contains the angular framework files
 
 *Note that the `bower_components` folder would normally be installed in the root folder but
-angular-seed changes this location through the `.bowerrc` file.  Putting it in the app folder makes
+wng_numeric_sequence changes this location through the `.bowerrc` file.  Putting it in the app folder makes
 it easier to serve the files by a webserver.*
 
 ### Run the Application
@@ -63,14 +65,31 @@ npm start
 
 Now browse to the app at `http://localhost:8000/index.html`.
 
+## Directory Layout
+
+```
+app/                    --> all of the source files for the application
+  app.css               --> default stylesheet
+  sequence/                --> the sequence view template and logic
+    sequence_view.html       --> the partial template
+    sequence.js              --> the controller logic
+    sequence_test.js         --> tests of the controller
+  app.js                --> main application module
+  index.html            --> app layout file (the main html template file of the app)
+karma.conf.js         --> config file for running unit tests with Karma
+e2e-tests/            --> end-to-end tests
+  protractor-conf.js    --> Protractor config file
+  scenarios.js          --> end-to-end scenarios to be run by Protractor
+```
+
 
 ## Testing
 
-There are two kinds of tests in the angular-seed application: Unit tests and end-to-end tests.
+There are two kinds of tests in the wng_numeric_sequence application: Unit tests and end-to-end tests.
 
 ### Running Unit Tests
 
-The angular-seed app comes preconfigured with unit tests. These are written in
+The wng_numeric_sequence app comes preconfigured with unit tests. These are written in
 [Jasmine][jasmine], which we run with the [Karma Test Runner][karma]. We provide a Karma
 configuration file to run them.
 
@@ -99,7 +118,7 @@ npm run test-single-run
 
 ### End to end testing
 
-The angular-seed app comes with end-to-end tests, again written in [Jasmine][jasmine]. These tests
+The wng_numeric_sequence app comes with end-to-end tests, again written in [Jasmine][jasmine]. These tests
 are run with the [Protractor][protractor] End-to-End test runner.  It uses native events and has
 special features for Angular applications.
 
@@ -114,7 +133,7 @@ can interact with it.
 npm start
 ```
 
-In addition, since Protractor is built upon WebDriver we need to install this.  The angular-seed
+In addition, since Protractor is built upon WebDriver we need to install this.  The wng_numeric_sequence
 project comes with a predefined script to do this:
 
 ```
