@@ -1,0 +1,32 @@
+
+<div style="margin-left: 40px;">
+
+	<h1>WNG Numeric Sequence App</h1>
+
+	<p>This application presents 5 different numeric sequences with values starting from 1 up to (and including) the number sepcified in the input box. 
+		All input values must be whole (non decimal) integers greater than 0, with 1 bieng the minimum acceptable value.
+		The first sequence displays all the values starting from 1 to the specified value. 
+		The next two sequences display the odd and even numbers in the range from 1 up to the specified value.
+		The next sequence displays all values from 1 up to the specified value but replaces multiples of 3, 5 and both 3 & 5 with C, E and Z respectively.
+		The final sequence will output the Fibonacci sequence up to the value sepcified. Note that this sequence will start with a single 1 as this is the minimum value.
+		Once you press the Calculate button the previously described sequences will get populated below as comma seperated lists or an error message will be displayed in red.</p>
+
+	<br/>
+
+	<div class="form-group" >
+		<label>Enter the maximum value for the sequence and press Calculate:</label>
+		<input type="text" ng-model="maxValue" class="form-control" required>
+		<button id="genSequence" class="btn btn-primary" type="submit" ng-click="generateSequences()">Calculate</button>	
+	</div>
+
+
+	<label id="inputErrorMsg" ng-show="!isValidInput" style="color: red">Invalid input. Value must be whole number greater than 0.</label><br/><br/>
+
+	
+	<label>All Values Sequence: <div id="numericSeqSpan" ng-show="isValidInput"> <span  ng-repeat="kpPair in sequences.AllValues">{{kpPair.value}}{{$last ? '' : ', '}}</span>  </div>  </label><br/><br/>
+	<label>Odd Values Sequence: <div id="oddValSeqSpan" ng-show="isValidInput"> <span ng-repeat="kpPair in sequences.OddNumbers">{{kpPair.value}}{{$last ? '' : ', '}}</span></div>  </label><br/><br/>
+	<label>Even Values Sequence:<div id="evenValSeqSpan" ng-show="isValidInput">  <span ng-repeat="kpPair in sequences.EvenNumbers">{{kpPair.value}}{{$last ? '' : ', '}}</span></div>  </label><br/><br/>
+	<label>Lettered Values Sequence: <div id="letteredSeqSpan" ng-show="isValidInput"> <span ng-repeat="kpPair in sequences.LetterReplacedNumbers">{{kpPair.value}}{{$last ? '' : ', '}}</span></div>  </label><br/><br/>
+	<label>Fibonacci Values Sequence: <div id="fibonacciSeqSpan" ng-show="isValidInput"> <span ng-repeat="kpPair in sequences.FibonacciNumbers">{{kpPair.value}}{{$last ? '' : ', '}}</span></div>  </label><br/><br/>
+
+</div>
